@@ -1,11 +1,16 @@
-@Library('my-shared-library') _
+//@Library('my-shared-library') _
 
 pipeline{
 
     agent any
     //agent { label 'Demo' }
+    stages{
+        stage('hello'){
+            sh ' hello world'
+        }
+    }
 
-    parameters{
+   /* parameters{
 
         choice(name: 'action', choices: 'create\ndelete', description: 'Choose create/Destroy')
         string(name: 'ImageName', description: "name of the docker build", defaultValue: 'javapp')
@@ -110,4 +115,5 @@ pipeline{
             }
         }      
     }
+    */
 }
